@@ -3,3 +3,6 @@
 -- Add any additional options here
 vim.opt.shiftwidth = 4
 vim.g.autoformat = false
+vim.opt.conceallevel = 0
+vim.opt.wrap = true
+vim.opt.breakindent = true
