@@ -45,6 +45,9 @@ return {
                     BlinkCmpScrollBarGutter = { bg = theme.ui.bg_m1 },
                     PmenuThumb = { bg = theme.ui.bg_p2 },
 
+                    CursorLineNr = { fg = colors.palette.sakuraPink, bg = "NONE" },
+                    StatusLine = { bg = colors.theme.ui.bg_p1 },
+
                     PMenuExtra = { fg = colors.palette.fujiGray, bg = "none" },
                     -- BlinkCmpDocCursorLine = { link = "none" },
 
