@@ -35,6 +35,7 @@ return {
                     -- so that you can use it where your still want darker windows.
                     -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
                     NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+                    PmenuExtra = { fg = colors.palette.fujiGray, bg = "NONE" },
 
                     -- Popular plugins that open floats will link to NormalFloat by default;
                     -- set their background accordingly if you wish to keep them dark and borderless
@@ -48,8 +49,7 @@ return {
                     CursorLineNr = { fg = colors.palette.sakuraPink, bg = "NONE" },
                     StatusLine = { bg = colors.theme.ui.bg_p1 },
 
-                    PMenuExtra = { fg = colors.palette.fujiGray, bg = "none" },
-                    -- BlinkCmpDocCursorLine = { link = "none" },
+                    BlinkCmpDocCursorLine = { link = "none" },
 
                     DiagnosticVirtualTextHint  = makeDiagnosticColor(theme.diag.hint),
                     DiagnosticVirtualTextInfo  = makeDiagnosticColor(theme.diag.info),
