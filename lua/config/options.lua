@@ -9,4 +9,4 @@ vim.opt.wrap = true
 vim.opt.breakindent = true
 
 vim.o.winborder = "rounded"
-vim.o.pumblend=20
+-- vim.o.pumblend=20

@@ -1,68 +1,79 @@
 return {
-    -- add gruvbox
-    -- { "sainnhe/gruvbox-material" },
+    -- {
+    --     "rebelot/kanagawa.nvim",
+    --     opts = {
+    --         transparent = true,
+    --         colors = {
+    --             theme = {
+    --                 all = {
+    --                     ui = {
+    --                         bg_gutter = "none",
+    --                         float = {
+    --                             bg = "none"
+    --                         }
+    --                     }
+    --                 }
+    --             }
+    --         },
+    --         overrides = function(colors)
+    --             local theme = colors.theme
+    --
+    --             local makeDiagnosticColor = function(color)
+    --                 local c = require("kanagawa.lib.color")
+    --                 return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
+    --             end
+    --
+    --             return {
+    --                 NormalFloat = { bg = "none" },
+    --                 FloatBorder = { bg = "none" },
+    --                 FloatTitle = { bg = "none" },
+    --                 BlinkCmpMenuBorder = { fg = theme.ui.float.fg_border, bg = "none" },
+    --
+    --                 -- Save an hlgroup with dark background and dimmed foreground
+    --                 -- so that you can use it where your still want darker windows.
+    --                 -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+    --                 NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+    --                 PmenuExtra = { fg = colors.palette.fujiGray, bg = "NONE" },
+    --
+    --                 -- Popular plugins that open floats will link to NormalFloat by default;
+    --                 -- set their background accordingly if you wish to keep them dark and borderless
+    --                 LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+    --                 MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+    --                 BlinkCmpMenu = { fg = theme.ui.shade0, bg = theme.ui.bg_m1 },  -- add `blend = vim.o.pumblend` to enable transparency
+    --                 BlinkCmpMenuSelection = { fg = "NONE", bg = theme.ui.bg_p2 },
+    --                 BlinkCmpScrollBarGutter = { bg = theme.ui.bg_m1 },
+    --                 PmenuThumb = { bg = theme.ui.bg_p2 },
+    --
+    --                 CursorLineNr = { fg = colors.palette.sakuraPink, bg = "NONE" },
+    --                 StatusLine = { bg = colors.theme.ui.bg_p1 },
+    --
+    --                 BlinkCmpDocCursorLine = { link = "none" },
+    --
+    --                 DiagnosticVirtualTextHint  = makeDiagnosticColor(theme.diag.hint),
+    --                 DiagnosticVirtualTextInfo  = makeDiagnosticColor(theme.diag.info),
+    --                 DiagnosticVirtualTextWarn  = makeDiagnosticColor(theme.diag.warning),
+    --                 DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+    --             }
+    --         end,
+    --     }
+    -- },
     {
-        "rebelot/kanagawa.nvim",
-        opts = {
-            transparent = true,
-            colors = {
-                theme = {
-                    all = {
-                        ui = {
-                            bg_gutter = "none",
-                            float = {
-                                bg = "none"
-                            }
-                        }
-                    }
-                }
-            },
-            overrides = function(colors)
-                local theme = colors.theme
-
-                local makeDiagnosticColor = function(color)
-                    local c = require("kanagawa.lib.color")
-                    return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
-                end
-
-                return {
-                    NormalFloat = { bg = "none" },
-                    FloatBorder = { bg = "none" },
-                    FloatTitle = { bg = "none" },
-                    BlinkCmpMenuBorder = { fg = theme.ui.float.fg_border, bg = "none" },
-
-                    -- Save an hlgroup with dark background and dimmed foreground
-                    -- so that you can use it where your still want darker windows.
-                    -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
-                    NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-                    PmenuExtra = { fg = colors.palette.fujiGray, bg = "NONE" },
-
-                    -- Popular plugins that open floats will link to NormalFloat by default;
-                    -- set their background accordingly if you wish to keep them dark and borderless
-                    LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                    MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                    BlinkCmpMenu = { fg = theme.ui.shade0, bg = theme.ui.bg_m1 },  -- add `blend = vim.o.pumblend` to enable transparency
-                    BlinkCmpMenuSelection = { fg = "NONE", bg = theme.ui.bg_p2 },
-                    BlinkCmpScrollBarGutter = { bg = theme.ui.bg_m1 },
-                    PmenuThumb = { bg = theme.ui.bg_p2 },
-
-                    CursorLineNr = { fg = colors.palette.sakuraPink, bg = "NONE" },
-                    StatusLine = { bg = colors.theme.ui.bg_p1 },
-
-                    BlinkCmpDocCursorLine = { link = "none" },
-
-                    DiagnosticVirtualTextHint  = makeDiagnosticColor(theme.diag.hint),
-                    DiagnosticVirtualTextInfo  = makeDiagnosticColor(theme.diag.info),
-                    DiagnosticVirtualTextWarn  = makeDiagnosticColor(theme.diag.warning),
-                    DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
-                }
-            end,
-        }
+        "catppuccin/nvim",
+        init = function ()
+                require("catppuccin").setup({
+                    flavour = "mocha",
+                    float = {
+                        transparent = true,
+                        solid = true
+                    },
+                    transparent_background = true,
+                })
+            end
     },
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "kanagawa-dragon"
+            colorscheme = "catppuccin-nvim"
         }
     }
 }
